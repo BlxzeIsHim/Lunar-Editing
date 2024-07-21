@@ -1,0 +1,185 @@
+body {
+    background-color: #2e2e2e;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('satoru-gojo.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+header {
+    margin-top: 70px;
+    text-align: center;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #00aaff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button-container a {
+    background: linear-gradient(45deg, #00aaff, #0077cc);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.button-container a .icon {
+    width: 24px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.button-container a:hover {
+    background: linear-gradient(45deg, #0077cc, #005fa3);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.button-container a:active {
+    transform: translateY(0);
+}
+
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-buttons a {
+    background: linear-gradient(45deg, #00aaff, #0077cc);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-buttons a .icon {
+    width: 24px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.social-buttons a:hover {
+    background: linear-gradient(45deg, #0077cc, #005fa3);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.social-buttons a:active {
+    transform: translateY(0);
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: rgba(31, 31, 31, 0.9);
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #cccccc;
+}
+
+@media (max-width: 600px) {
+    .button-container,
+    .social-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-container a,
+    .social-buttons a {
+        width: 80%;
+    }
+}
