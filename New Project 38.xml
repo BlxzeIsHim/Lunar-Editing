@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+Created by Alight Motion (http://alightmotion.com)
+Exported: 2024-07-18 04:23 PM
+6.2.6 (737)
+-->
+<scene title="New Project 38" width="1080" height="1350" exportWidth="1920" exportHeight="1080" bgcolor="#FF000000" totalTime="23599" fps="60" modifiedTime="1721334234548" amver="737" ffver="107" am="com.alightcreative.motion/6.2.6" amplatform="ios" precompose="dynamicResolution" retime="freeze">
+  <media uri="am-internal:///D4E41285B63A8277288F21695A44B71956BE6714.MP4" type="video/mp4" duration="23600" size="22381183" fps="60" infoUpdated="1721333225645" width="1080" height="1350"/>
+  <shape id="2" startTime="0" endTime="23599" fillType="media" fillVideo="am-internal:///D4E41285B63A8277288F21695A44B71956BE6714.MP4" mediaFillMode="fill" s=".rect">
+    <transform>
+      <location value="540.000000,675.000000,0.000000"/>
+    </transform>
+    <property name="size" type="vec2" value="540.000000,675.000000"/>
+  </shape>
+  <shape id="4" label="Rectangle 1" startTime="0" endTime="23599" fillType="color" s=".rect">
+    <transform>
+      <location value="540.000000,675.000000,0.000000"/>
+      <scale value="5.400000,6.750000"/>
+    </transform>
+    <fillColor value="#FFAC95E2"/>
+    <effect id="com.alightcreative.effects.lift" locallyApplied="true"/>
+    <effect id="com.alightcreative.effects.colortemperature" locallyApplied="true">
+      <property name="temperature" type="float" value="18.109999"/>
+    </effect>
+    <effect id="com.alightcreative.effects.edgeglow" locallyApplied="true">
+      <property name="brightness" type="float" value="-0.010000"/>
+      <property name="gamma" type="float" value="1.150000"/>
+      <property name="smoothing" type="float" value="10.000000"/>
+      <property name="spread" type="float" value="1.930000"/>
+      <property name="strength" type="float" value="0.880000"/>
+      <property name="threshold" type="float" value="1.000000"/>
+    </effect>
+    <effect id="com.alightcreative.effects.satvib" locallyApplied="true">
+      <property name="saturation" type="float" value="-0.150000"/>
+    </effect>
+    <effect id="com.alightcreative.effects.satvib" locallyApplied="true">
+      <property name="saturation" type="float" value="0.260000"/>
+    </effect>
+    <effect id="com.alightcreative.effects.edgeglow" locallyApplied="true">
+      <property name="blend" type="float" value="0.540000"/>
+      <property name="smoothing" type="float" value="2.800000"/>
+      <property name="spread" type="float" value="0.810000"/>
+      <property name="strength" type="float" value="0.290000"/>
+      <property name="threshold" type="float" value="0.140000"/>
+    </effect>
+    <effect id="com.alightcreative.effects.highlightshadow" locallyApplied="true">
+      <property name="highlights" type="float" value="0.300000"/>
+      <property name="shadows" type="float" value="0.200000"/>
+    </effect>
+    <effect id="com.alightcreative.effects.brightcont2" locallyApplied="true">
+      <property name="brightness" type="float" value="-0.030000"/>
+      <property name="contrast" type="float" value="-0.170000"/>
+    </effect>
+  </shape>
+</scene>
