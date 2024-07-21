@@ -1,165 +1,61 @@
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: white;
-    background-color: #333; /* Fallback background color */
-    overflow: hidden; /* Hide body overflow */
-}
-
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('sukuna.jpg') no-repeat center center;
-    background-size: cover;
-    filter: blur(8px);
-    opacity: 0.6;
-    z-index: -1;
-}
-
-header {
-    text-align: center;
-    padding: 60px 20px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6);
-    margin-bottom: 20px; /* Adjust margin to fit header within viewport */
-}
-
-header h1 {
-    font-size: 2.5em;
-    margin: 0;
-    color: #00aaff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-header p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-main {
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 800px;
-    height: calc(100vh - 120px); /* Adjust height to fit within viewport minus header and footer */
-    overflow: hidden; /* Prevent scrolling in main */
-    position: relative;
-}
-
-.preset-list {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    max-height: calc(100vh - 120px); /* Adjust height to fit within main container */
-    overflow-y: auto; /* Enable vertical scrolling */
-    box-sizing: border-box; /* Include padding and border in height calculation */
-}
-
-.preset-section {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
-
-.preset-section h2 {
-    font-size: 1.8em;
+    font-family: Arial, sans-serif;
     color: #333;
-    margin-bottom: 10px;
 }
 
-.preset-section p {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    background: #00aaff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    font-size: 1em;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.download-button:hover {
-    background: #0077cc;
-    transform: translateY(-2px);
-}
-
-.download-button:active {
-    transform: translateY(0);
-}
-
-.download-icon {
-    width: 20px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.social-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.social-buttons a {
-    background: linear-gradient(45deg, #00aaff, #0077cc);
-    border-radius: 50px;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.social-buttons a .icon {
-    width: 24px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.social-buttons a:hover {
-    background: linear-gradient(45deg, #0077cc, #005fa3);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.social-buttons a:active {
-    transform: translateY(0);
-}
-
-footer {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
+.container {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    color: #ccc;
-    margin-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
 }
 
-footer p {
-    margin: 0;
+h1 {
+    margin-top: 0;
+    color: #fff;
 }
 
-@media (max-width: 600px) {
-    .social-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
+.whitelist {
+    background: rgba(255, 255, 255, 0.8); /* White background with opacity */
+    border-radius: 8px;
+    padding: 20px;
+    display: inline-block;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Background Image Styles */
+body {
+    background: url('sukuna.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
