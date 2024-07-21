@@ -8,18 +8,19 @@ body {
     align-items: center;
     color: white;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Hide default scrollbars */
 }
 
 /* Background Styling */
 .background {
-    position: absolute;
+    position: fixed; /* Ensure background stays in place */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: url('sukuna.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed; /* Fix the background image in place */
     filter: blur(8px);
     opacity: 0.5;
     z-index: -1;
@@ -71,7 +72,7 @@ header {
 header h1 {
     font-size: 3em;
     color: #00aaff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
@@ -81,26 +82,60 @@ header p {
     color: #cccccc;
     max-width: 600px;
     margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
 }
 
 /* Whitelist Styling */
 .whitelist {
-    background: rgba(255, 255, 255, 0.9);
+    background: #ffffff; /* Solid white background for the whitelist section */
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 500px;
-    width: 100%;
+    width: 90%; /* Ensure responsiveness */
     margin-top: 30px;
     text-align: center;
+    height: auto; /* Allow dynamic height */
+    position: relative; /* For positioning child elements */
 }
 
-.whitelist h2 {
+/* Scrollable Content */
+.whitelist-content {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set a maximum height for scrolling */
+    width: 100%;
+    padding-right: 15px; /* Space for the custom scrollbar */
+    box-sizing: content-box; /* Prevent content overflow issues */
+    margin-right: -15px; /* Compensate for the scrollbar */
+}
+
+/* Project Section Styling */
+.project-section {
+    margin-bottom: 30px;
+}
+
+.project-section h2 {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
+}
+
+/* Custom Scrollbar Styles */
+.whitelist-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.whitelist-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.whitelist-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /* Download Button Styling */
@@ -119,6 +154,7 @@ header p {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    overflow: hidden; /* Ensure no overflow */
 }
 
 .button:hover {
@@ -163,6 +199,12 @@ footer {
 footer p {
     margin: 0;
     color: #cccccc;
+}
+
+/* Page Scroll Styling */
+html, body {
+    height: 100%;
+    overflow-y: scroll; /* Ensure the whole page is scrollable */
 }
 
 /* Responsive Styling */
