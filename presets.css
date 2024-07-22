@@ -3,11 +3,8 @@ body {
     background-color: #2e2e2e;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    position: relative;
+    padding: 0;
+    color: #fff;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -20,16 +17,16 @@ body {
     height: 100vh;
     background: url('sukuna.jpg') no-repeat center center;
     background-size: cover;
-    filter: blur(10px); /* Increased blur for better effect */
-    z-index: -1; /* Ensure background is behind all other elements */
+    filter: blur(8px); /* Refined blur for subtle effect */
+    z-index: -1;
 }
 
 /* Navigation Styling */
 nav {
     width: 100%;
     background-color: rgba(31, 31, 31, 0.9);
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -39,20 +36,20 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 300;
-    transition: color 0.3s;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -61,86 +58,79 @@ nav ul li a:hover {
 
 /* Header Styling */
 header {
-    background: rgba(0, 0, 0, 0.5); /* Added background for readability */
+    background: rgba(0, 0, 0, 0.6);
     margin-top: 70px;
     text-align: center;
     padding: 100px 20px;
     width: 100%;
-    color: white;
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     color: #00aaff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 header p {
     font-size: 1.2em;
-    color: #cccccc;
-    max-width: 600px;
+    color: #dddddd;
+    max-width: 700px;
     margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Enhanced Whitelist Styling */
-.whitelist {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+/* Enhanced Content Styling */
+.container {
     width: 90%;
-    max-width: 800px;
-    margin-top: 30px;
-    position: relative;
-    overflow: hidden; /* Hide scrollbar part to apply custom styling */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.project-section, .whitelist {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+}
+
+/* White List Styling */
 .whitelist-content {
     overflow-y: auto;
-    max-height: 600px; /* Adjust as needed */
-    padding-right: 15px; /* Space for scrollbar */
+    max-height: 500px;
+    padding-right: 15px;
 }
 
 .whitelist-content::-webkit-scrollbar {
-    width: 8px; /* Custom scrollbar width */
+    width: 10px;
 }
 
 .whitelist-content::-webkit-scrollbar-thumb {
-    background-color: #00aaff; /* Color of scrollbar thumb */
+    background-color: #00aaff;
     border-radius: 10px;
 }
 
 .whitelist-content::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1); /* Color of scrollbar track */
+    background: rgba(0, 0, 0, 0.2);
 }
 
 /* Project Section Styling */
-.project-section {
-    margin-bottom: 30px;
-    background: rgba(0, 0, 0, 0.03); /* Subtle background for readability */
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .project-section h2 {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .project-section p {
-    font-size: 1em;
-    color: #333; /* Darker text color for contrast */
+    font-size: 1.1em;
+    color: #e0e0e0;
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Light background for text */
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .project-section .button {
@@ -149,35 +139,19 @@ header p {
     background: linear-gradient(45deg, #00aaff, #0077cc);
     border: none;
     border-radius: 50px;
-    padding: 15px 40px;
-    font-size: 1.2em;
+    padding: 15px 30px;
+    font-size: 1.1em;
     color: white;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     text-decoration: none;
-    position: relative;
-}
-
-.project-section .button .small-download {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .project-section .button:hover {
     background: linear-gradient(45deg, #0077cc, #005fa3);
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 .project-section .button:active {
@@ -187,7 +161,7 @@ header p {
 /* Footer Styling */
 footer {
     margin-top: 50px;
-    padding: 20px 0;
+    padding: 20px;
     background-color: rgba(31, 31, 31, 0.9);
     text-align: center;
     width: 100%;
@@ -226,16 +200,29 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .whitelist {
+@media (max-width: 768px) {
+    .whitelist, .project-section {
+        padding: 15px;
         width: 100%;
-        margin-top: 20px;
-        padding: 10px;
     }
 
     .project-section .button {
         width: 100%;
         font-size: 1em;
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
     }
 }
