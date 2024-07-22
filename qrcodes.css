@@ -1,0 +1,170 @@
+body {
+    background-color: #2e2e2e;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh; /* Ensures background covers full height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('sukuna.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+header {
+    margin-top: 70px;
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #00aaff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.qr-code-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.qr-code {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 200px;
+}
+
+.qr-code img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.qr-code:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-button {
+    background: linear-gradient(45deg, #00aaff, #0077cc);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.download-button i {
+    margin-right: 8px;
+}
+
+.download-button:hover {
+    background: linear-gradient(45deg, #0077cc, #005fa3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.download-button:active {
+    transform: translateY(0);
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: rgba(31, 31, 31, 0.9);
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #cccccc;
+}
+
+@media (max-width: 600px) {
+    .qr-code-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qr-code {
+        width: 90%;
+    }
+}
