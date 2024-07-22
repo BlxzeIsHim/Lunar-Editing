@@ -8,22 +8,20 @@ body {
     align-items: center;
     color: white;
     position: relative;
-    overflow: hidden; /* Hide default scrollbars */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Background Styling */
 .background {
-    position: fixed; /* Ensure background stays in place */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: url('sukuna.jpg') no-repeat center center;
     background-size: cover;
-    background-attachment: fixed; /* Fix the background image in place */
-    filter: blur(8px);
-    opacity: 0.5;
-    z-index: -1;
+    filter: blur(10px); /* Increased blur for better effect */
+    z-index: -1; /* Ensure background is behind all other elements */
 }
 
 /* Navigation Styling */
@@ -63,16 +61,18 @@ nav ul li a:hover {
 
 /* Header Styling */
 header {
+    background: rgba(0, 0, 0, 0.5); /* Added background for readability */
     margin-top: 70px;
     text-align: center;
     padding: 100px 20px;
     width: 100%;
+    color: white;
 }
 
 header h1 {
     font-size: 3em;
     color: #00aaff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
@@ -82,34 +82,39 @@ header p {
     color: #cccccc;
     max-width: 600px;
     margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Whitelist Styling */
+/* Enhanced Whitelist Styling */
 .whitelist {
-    background: #ffffff; /* Solid white background for the whitelist section */
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 500px;
-    width: 90%; /* Ensure responsiveness */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
     margin-top: 30px;
-    text-align: center;
-    height: auto; /* Allow dynamic height */
-    position: relative; /* For positioning child elements */
+    position: relative;
+    overflow: hidden; /* Hide scrollbar part to apply custom styling */
 }
 
-/* Scrollable Content */
 .whitelist-content {
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 400px; /* Set a maximum height for scrolling */
-    width: 100%;
-    padding-right: 15px; /* Space for the custom scrollbar */
-    box-sizing: content-box; /* Prevent content overflow issues */
-    margin-right: -15px; /* Compensate for the scrollbar */
+    overflow-y: auto;
+    max-height: 600px; /* Adjust as needed */
+    padding-right: 15px; /* Space for scrollbar */
+}
+
+.whitelist-content::-webkit-scrollbar {
+    width: 8px; /* Custom scrollbar width */
+}
+
+.whitelist-content::-webkit-scrollbar-thumb {
+    background-color: #00aaff; /* Color of scrollbar thumb */
+    border-radius: 10px;
+}
+
+.whitelist-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Color of scrollbar track */
 }
 
 /* Project Section Styling */
@@ -120,27 +125,20 @@ header p {
 .project-section h2 {
     font-size: 1.6rem;
     color: #333;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.project-section p {
+    font-size: 1em;
+    color: #555;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Improved shadow for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Custom Scrollbar Styles */
-.whitelist-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.whitelist-content::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
-}
-
-.whitelist-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* Download Button Styling */
-.button {
-    position: relative;
+.project-section .button {
+    display: inline-flex;
+    align-items: center;
     background: linear-gradient(45deg, #00aaff, #0077cc);
     border: none;
     border-radius: 50px;
@@ -150,41 +148,33 @@ header p {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
     text-decoration: none;
-    overflow: hidden; /* Ensure no overflow */
+    position: relative;
 }
 
-.button:hover {
-    background: linear-gradient(45deg, #0077cc, #005fa3);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.button:active {
-    transform: translateY(0);
-}
-
-/* Small Download Icon Styling */
-.small-download {
+.project-section .button .small-download {
     position: absolute;
-    top: 50%;
     right: 15px;
+    top: 50%;
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.small-download svg {
-    fill: white;
+.project-section .button:hover {
+    background: linear-gradient(45deg, #0077cc, #005fa3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-section .button:active {
+    transform: translateY(0);
 }
 
 /* Footer Styling */
@@ -201,20 +191,44 @@ footer p {
     color: #cccccc;
 }
 
-/* Page Scroll Styling */
-html, body {
-    height: 100%;
-    overflow-y: scroll; /* Ensure the whole page is scrollable */
+/* Back-to-Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0077cc;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
 }
 
-/* Responsive Styling */
+.back-to-top:hover {
+    background: #005fa3;
+    transform: scale(1.1);
+}
+
+.back-to-top svg {
+    fill: white;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
-        gap: 10px;
+    .whitelist {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
     }
 
-    .button-container a {
-        width: 80%;
+    .project-section .button {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px;
     }
 }
