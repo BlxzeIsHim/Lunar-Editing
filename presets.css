@@ -120,6 +120,10 @@ header p {
 /* Project Section Styling */
 .project-section {
     margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.03); /* Subtle background for readability */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .project-section h2 {
@@ -131,9 +135,12 @@ header p {
 
 .project-section p {
     font-size: 1em;
-    color: #555;
+    color: #333; /* Darker text color for contrast */
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.8); /* Light background for text */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .project-section .button {
