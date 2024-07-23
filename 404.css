@@ -1,0 +1,119 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Stars Background */
+.stars {
+    background: url('stars.jpg') repeat top center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    animation: animateStars 100s linear infinite;
+}
+
+/* Sukuna Background with Opacity */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('sukuna.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(6px); /* Adjust blur to allow stars to be visible */
+    opacity: 0.3; /* Lower opacity for sukuna background */
+    z-index: -1; /* Ensure stars are visible below */
+}
+
+/* Content Styling */
+.content {
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+/* Heading and Paragraph Styling */
+h1 {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #00aaff;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+    color: #cccccc;
+}
+
+/* Link Styling */
+a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 2px solid #00aaff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #00aaff;
+    color: #ffffff;
+}
+
+/* Astronaut Animation */
+.astronaut {
+    max-width: 300px;
+    margin: 20px auto;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Starry Background Animation */
+@keyframes animateStars {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 2000px;
+    }
+}
+
+/* Back to Home Button */
+.back-to-home {
+    margin-top: 30px;
+}
