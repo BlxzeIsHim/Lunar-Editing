@@ -3,11 +3,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #e0e0e0; /* Light text for dark mode */
+    background-color: #121212; /* Dark background for true dark mode */
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Background and Overlay */
 .background {
     position: fixed;
     top: 0;
@@ -17,13 +19,19 @@ body {
     background: url('Gojoo.jpg') no-repeat center center/cover;
     filter: blur(8px);
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.3; /* Reduce opacity for improved readability */
 }
 
 /* Navigation */
 nav {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(30, 30, 30, 0.9);
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky; /* Keeps the nav at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background 0.3s ease-in-out;
 }
 
 nav ul {
@@ -32,77 +40,152 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
 nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Add a slight background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 20px;
+    background: rgba(30, 30, 30, 0.85);
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px; /* Space between header and next section */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em; /* Larger font size for a more striking header */
+    color: #e0e0e0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    animation: fadeInDown 1s ease forwards;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.5em; /* Increased font size for better readability */
+    color: #ccc;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Contact Info */
+/* Contact Info Section */
 .contact-info {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px;
+    background: rgba(33, 33, 33, 0.95);
+    border-radius: 12px;
+    padding: 40px;
+    margin: 40px auto; /* Center the contact section */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 800px; /* Set a maximum width for the container */
+    animation: fadeInUp 1s ease forwards;
 }
 
 .contact-info h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-top: 0;
+    text-align: center;
+    color: #007bff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .contact-info ul {
     list-style: none;
     padding: 0;
+    color: #ddd; /* Light text color for contrast */
 }
 
 .contact-info ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex; /* Align icons and text horizontally */
+    align-items: center;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add hover effect */
+}
+
+.contact-info ul li:hover {
+    transform: translateX(10px);
+    color: #f0f0f0;
+}
+
+.contact-info ul li i {
+    margin-right: 15px;
+    color: #007bff; /* Icon color to match the theme */
+    font-size: 1.5em;
 }
 
 .contact-info ul li a {
-    color: #333;
+    color: inherit; /* Inherit color for consistent styling */
     text-decoration: none;
+    transition: text-decoration 0.3s ease; /* Add a smooth transition */
 }
 
 .contact-info ul li a:hover {
     text-decoration: underline;
 }
 
-.contact-info i {
-    margin-right: 10px;
-}
-
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(30, 30, 30, 0.9);
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
-    position: fixed;
+    padding: 15px 20px;
+    position: relative; /* Change position to allow content flow */
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.6);
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
