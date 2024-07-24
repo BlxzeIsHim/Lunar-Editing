@@ -1,0 +1,7 @@
+<!-- am-logo.svg -->
+<svg width="120" height="120" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="256" cy="256" r="256" fill="#00aaff"/>
+    <path d="M200 200 C220 180, 280 180, 300 200 S360 240, 340 260 S280 300, 260 280 S180 260, 200 200 Z" fill="white" opacity="0.6"/>
+    <path d="M240 240 C250 230, 270 230, 280 240 S290 250, 280 260 S250 270, 240 260 S230 250, 240 240 Z" fill="white"/>
+    <path d="M210 240 L250 250 L240 290 L200 280 Z" fill="white" opacity="0.8"/>
+</svg>
