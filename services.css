@@ -3,11 +3,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #e0e0e0; /* Light color for better contrast in dark mode */
+    background-color: #121212; /* Darker background for true dark mode */
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Background and Overlay */
 .background {
     position: fixed;
     top: 0;
@@ -17,13 +19,19 @@ body {
     background: url('Gojoo.jpg') no-repeat center center/cover;
     filter: blur(8px);
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.3; /* Reduce opacity for improved readability */
 }
 
 /* Navigation */
 nav {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(30, 30, 30, 0.9);
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky; /* Keeps the nav at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background 0.3s ease-in-out;
 }
 
 nav ul {
@@ -32,48 +40,65 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 10px;
 }
 
 nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #333; /* Add a slight background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 20px;
+    background: rgba(30, 30, 30, 0.85);
     color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px; /* Space between header and next section */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em; /* Larger font size for a more striking header */
+    color: #e0e0e0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    animation: fadeInDown 1s ease forwards;
 }
 
 header p {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: 1.5em; /* Increased font size for better readability */
+    color: #ccc;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease forwards;
 }
 
 /* Services Section */
 .services {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
+    background: rgba(33, 33, 33, 0.95);
+    border-radius: 12px;
     padding: 40px;
     margin: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 1200px;
+    margin: 40px auto; /* Center the services section */
+    animation: fadeInUp 1s ease forwards;
 }
 
 .services h2 {
@@ -81,16 +106,19 @@ header p {
     margin-top: 0;
     text-align: center;
     color: #007bff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .services-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
+    color: #ddd; /* Light text color for contrast */
 }
 
 .services-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1.2em; /* Larger text size for better readability */
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
@@ -98,16 +126,19 @@ header p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Center align service items */
 }
 
 .service-item {
     flex: 1 1 calc(33.333% - 20px);
-    background: #fff;
+    background: #1e1e1e; /* Darker background for service items */
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    margin: 0 auto; /* Center each service item */
 }
 
 .service-item i {
@@ -117,20 +148,23 @@ header p {
 }
 
 .service-item h3 {
-    font-size: 1.5em;
+    font-size: 1.7em; /* Slightly larger font for service titles */
     margin: 10px 0;
+    color: #f0f0f0;
 }
 
 .service-item p {
     font-size: 1em;
     margin: 0;
+    color: #ccc;
 }
 
 .service-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* Call to Action */
 .cta {
     text-align: center;
     margin-top: 30px;
@@ -151,11 +185,47 @@ header p {
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(30, 30, 30, 0.9);
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
-    position: fixed;
+    padding: 15px 20px;
+    position: relative; /* Change position to allow content flow */
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.6);
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
