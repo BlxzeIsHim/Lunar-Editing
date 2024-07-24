@@ -208,7 +208,7 @@ footer p {
     .button-container,
     .social-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px; /* Increased gap to prevent overlap */
     }
 
     .button-container a,
