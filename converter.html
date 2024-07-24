@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter - Advanced Image Converter</title>
+    <link rel="stylesheet" href="converter.css">
+</head>
+<body>
+    <div class="background"></div> <!-- Blurred background -->
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="converter.html">Converter</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Converter Container -->
+    <div class="converter">
+        <h1>Image Converter</h1>
+        <input type="file" id="upload" accept="image/*" />
+
+        <select id="format">
+            <option value="image/jpeg">Convert to JPG</option>
+            <option value="image/png">Convert to PNG</option>
+            <option value="image/bmp">Convert to BMP</option>
+            <option value="image/webp">Convert to WebP</option>
+            <option value="image/gif">Convert to GIF</option>
+            <option value="image/tiff">Convert to TIFF</option>
+            <option value="image/svg+xml">Convert to SVG</option>
+        </select>
+
+        <button id="convert">Convert Image</button>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+        <a id="download" href="#" download style="display:none;">Download Converted Image</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lunar Editing. All rights reserved.</p>
+    </footer>
+
+    <script src="converter.js"></script>
+</body>
+</html>
