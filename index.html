@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar Editing</title>
-    <link rel="icon" href="New Project 140 [E5E0643].png" type="image/png">
+    <title>Lunar Editing - Your One-Stop Solution for Video Editing Needs</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lunar Editing is your one-stop solution for all video editing needs, offering XML Presets, QR Codes, and tutorials.">
+    <meta name="keywords" content="video editing, XML presets, QR codes, tutorials, Lunar Editing">
+    <meta property="og:title" content="Lunar Editing">
+    <meta property="og:description" content="Your one-stop solution for all video editing needs.">
+    <meta property="og:image" content="link_to_your_image.jpg"> <!-- Add your Open Graph image URL -->
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
 </head>
 <body>
-    <div class="background"></div>
-    <nav>
+    <div class="background" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav aria-label="Main Navigation">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li> 
-            <li><a href="services.html">Services</a></li> 
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <header>
-        <h1>Lunar Editing</h1>
-        <p>Your one-stop solution for all video editing needs.</p>
-    </header>
-    <div class="button-container">
-        <a href="presets.html" class="xml-presets">XML Presets</a>
-        <a href="qrcodes.html" class="qr-codes">QR Codes</a> 
-        <a href="tutorials.html" class="tutorials">Tutorials</a>
-    </div>
-    <div class="social-buttons">
-        <a href="https://www.tiktok.com/@primesto.fx?_t=8oFG1iRxUTA&_r=1" class="tiktok"><img src="tiktok-logo.png" alt="TikTok Logo" class="icon"> TikTok</a>
-        <a href="https://discord.gg/4yDpjFCa77" class="discord"><img src="discord-logo.png" alt="Discord Logo" class="icon"> Discord</a>
-    </div>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>Lunar Editing</h1>
+            <p>Your one-stop solution for all video editing needs.</p>
+        </header>
+        
+        <!-- Buttons Section -->
+        <section class="button-container">
+            <a href="presets.html" class="xml-presets" aria-label="XML Presets">XML Presets</a>
+            <a href="qrcodes.html" class="qr-codes" aria-label="QR Codes">QR Codes</a>
+            <a href="tutorials.html" class="tutorials" aria-label="Tutorials">Tutorials</a>
+            <a href="converter.html" class="converter" aria-label="Converter">Converter</a> <!-- Added Converter button -->
+        </section>
+
+        <!-- Social Media Buttons -->
+        <section class="social-buttons">
+            <a href="https://www.tiktok.com/@primesto.fx?_t=8oFG1iRxUTA&_r=1" class="tiktok" aria-label="Visit our TikTok page">
+                <img src="tiktok-logo.png" alt="TikTok Logo" class="icon"> TikTok
+            </a>
+            <a href="https://discord.gg/4yDpjFCa77" class="discord" aria-label="Join our Discord server">
+                <img src="discord-logo.png" alt="Discord Logo" class="icon"> Discord
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Lunar Editing. All rights reserved.</p>
     </footer>
