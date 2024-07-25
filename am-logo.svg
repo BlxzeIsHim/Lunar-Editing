@@ -1,22 +1,20 @@
 <svg width="120" height="120" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <!-- Background Circle -->
-    <circle cx="256" cy="256" r="256" fill="#00aaff"/>
+    <circle cx="256" cy="256" r="256" fill="#004d40"/>
 
-    <!-- Main Shape -->
-    <path d="M256 128C168 128 128 168 128 256s40 128 128 128 128-40 128-128S344 128 256 128zm0 192c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" fill="white" stroke="#ffffff" stroke-width="2"/>
-
-    <!-- Inner Circle with Gradient -->
-    <circle cx="256" cy="256" r="48" fill="url(#grad1)" stroke="#ffffff" stroke-width="4"/>
-
-    <!-- Inner Details -->
-    <path d="M256 200c-30.9 0-56 25.1-56 56s25.1 56 56 56 56-25.1 56-56-25.1-56-56-56z" fill="white" opacity="0.8"/>
-    <path d="M256 216c-21.1 0-38.5 17.4-38.5 38.5S234.9 293 256 293s38.5-17.4 38.5-38.5S277.1 216 256 216z" fill="#00aaff" opacity="0.6"/>
-
-    <!-- Gradient Definition -->
+    <!-- Gradient for Depth Effect -->
     <defs>
         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#00aaff;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#0077cc;stop-opacity:1" />
+            <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#004d40;stop-opacity:1" />
         </linearGradient>
     </defs>
+
+    <!-- Main Shape -->
+    <g fill="url(#grad1)" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Outer shapes for main logo -->
+        <path d="M256 80c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176S353.2 80 256 80zm0 320c-79.2 0-144-64.8-144-144s64.8-144 144-144 144 64.8 144 144-64.8 144-144 144z"/>
+        <!-- Inner shapes for details -->
+        <path d="M256 144c-61.8 0-112 50.2-112 112s50.2 112 112 112 112-50.2 112-112-50.2-112-112-112zM256 328c-38.8 0-70.8-32-70.8-70.8s32-70.8 70.8-70.8 70.8 32 70.8 70.8-32 70.8-70.8 70.8z"/>
+    </g>
 </svg>
