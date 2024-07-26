@@ -53,6 +53,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
+    animation: slideInTop 1s ease-in-out; /* Slide-in animation for nav */
 }
 
 nav ul {
@@ -72,11 +73,15 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 300;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    animation: textWave 2s ease-in-out infinite; /* Text wave animation */
 }
 
 nav ul li a:hover {
     color: var(--primary-color);
+    transform: translateY(-5px); /* Lift text on hover */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 /* Header Styles */
@@ -93,6 +98,7 @@ header h1 {
     color: var(--primary-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out; /* Fade-in animation */
 }
 
 header p {
@@ -101,6 +107,8 @@ header p {
     max-width: 600px;
     margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease-out 0.5s; /* Delay for sequential effect */
+    animation-fill-mode: both; /* Ensure animations persist */
 }
 
 /* Accounts Container */
@@ -223,12 +231,14 @@ header p {
     font-size: 1.5em;
     margin: 10px 0;
     color: var(--secondary-color);
+    animation: bounceIn 1s ease-out; /* Bounce-in animation */
 }
 
 .account-info p {
     font-size: 1em;
     color: #cccccc;
     margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease-out; /* Fade-in effect */
 }
 
 /* Button Styling */
@@ -244,6 +254,7 @@ header p {
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     gap: 10px;
+    animation: pulse 1.5s infinite; /* Pulse animation */
 }
 
 .button:hover {
@@ -269,6 +280,7 @@ footer p {
     margin: 0;
     color: #cccccc;
     font-size: 0.9em;
+    animation: fadeInUp 1s ease-out;
 }
 
 /* Animations */
@@ -280,5 +292,57 @@ footer p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
     }
 }
