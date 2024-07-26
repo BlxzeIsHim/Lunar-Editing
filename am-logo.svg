@@ -1,20 +1,51 @@
 <svg width="120" height="120" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <!-- Background Circle -->
-    <circle cx="256" cy="256" r="256" fill="#004d40"/>
+    <circle cx="256" cy="256" r="256" fill="#0A0A23"/>
 
-    <!-- Gradient for Depth Effect -->
+    <!-- Gradient for Swirls -->
     <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#004d40;stop-opacity:1" />
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#00FFA3;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#0084FF;stop-opacity:1"/>
         </linearGradient>
     </defs>
 
-    <!-- Main Shape -->
-    <g fill="url(#grad1)" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Outer shapes for main logo -->
-        <path d="M256 80c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176S353.2 80 256 80zm0 320c-79.2 0-144-64.8-144-144s64.8-144 144-144 144 64.8 144 144-64.8 144-144 144z"/>
-        <!-- Inner shapes for details -->
-        <path d="M256 144c-61.8 0-112 50.2-112 112s50.2 112 112 112 112-50.2 112-112-50.2-112-112-112zM256 328c-38.8 0-70.8-32-70.8-70.8s32-70.8 70.8-70.8 70.8 32 70.8 70.8-32 70.8-70.8 70.8z"/>
-    </g>
+    <!-- Swirling Arcs -->
+    <path d="M256 150
+             C 185 150, 150 185, 150 256
+             C 150 327, 185 362, 256 362
+             C 327 362, 362 327, 362 256
+             C 362 185, 327 150, 256 150
+             Z" 
+          fill="none" 
+          stroke="url(#grad1)" 
+          stroke-width="30"
+          stroke-linecap="round" />
+
+    <!-- Inner Swirl -->
+    <path d="M256 190
+             C 210 190, 190 210, 190 256
+             C 190 300, 210 320, 256 320
+             C 300 320, 320 300, 320 256
+             C 320 210, 300 190, 256 190
+             Z" 
+          fill="none" 
+          stroke="url(#grad1)" 
+          stroke-width="20"
+          stroke-linecap="round" />
+
+    <!-- Additional Inner Circle -->
+    <path d="M256 230
+             C 240 230, 230 240, 230 256
+             C 230 270, 240 280, 256 280
+             C 270 280, 280 270, 280 256
+             C 280 240, 270 230, 256 230
+             Z"
+          fill="none"
+          stroke="url(#grad1)"
+          stroke-width="10"
+          stroke-linecap="round" />
+
+    <!-- Center Circle -->
+    <circle cx="256" cy="256" r="10" fill="#0A0A23" />
 </svg>
