@@ -185,11 +185,13 @@ header p {
 }
 
 footer {
-    margin-top: auto;
-    padding: 20px 0;
     background-color: var(--nav-background);
     text-align: center;
     width: 100%;
+    position: fixed; /* Fixes footer at the bottom */
+    bottom: 0; /* Aligns it to the bottom */
+    left: 0;
+    padding: 20px 0;
 }
 
 footer p {
@@ -215,3 +217,4 @@ footer p {
         font-size: 1em;
     }
 }
+
