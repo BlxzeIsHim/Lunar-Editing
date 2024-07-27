@@ -6,6 +6,7 @@ body {
     padding: 0;
     color: #fff;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.6; /* Improve text readability */
 }
 
 /* Background Styling */
@@ -30,6 +31,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for scroll effect */
 }
 
 nav ul {
@@ -49,11 +51,29 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 400;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Enhance hover effect */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00aaff;
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #00aaff;
+    transform: translateY(-2px);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* Header Styling */
@@ -63,6 +83,7 @@ header {
     text-align: center;
     padding: 100px 20px;
     width: 100%;
+    backdrop-filter: blur(5px); /* Add blur effect to background */
 }
 
 header h1 {
@@ -71,6 +92,7 @@ header h1 {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     letter-spacing: 2px;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
 }
 
 header p {
@@ -79,6 +101,19 @@ header p {
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Enhanced Content Styling */
@@ -88,12 +123,20 @@ header p {
     margin: 0 auto;
 }
 
-.project-section, .whitelist {
+.project-section,
+.whitelist {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.project-section:hover,
+.whitelist:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* White List Styling */
@@ -146,6 +189,7 @@ header p {
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     text-decoration: none;
+    outline: none;
 }
 
 .project-section .button:hover {
@@ -165,6 +209,7 @@ footer {
     background-color: rgba(31, 31, 31, 0.9);
     text-align: center;
     width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle border */
 }
 
 footer p {
@@ -201,7 +246,8 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .whitelist, .project-section {
+    .whitelist,
+    .project-section {
         padding: 15px;
         width: 100%;
     }
