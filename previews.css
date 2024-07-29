@@ -1,0 +1,203 @@
+/* Base Styles */
+body {
+    background-color: #2e2e2e;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.6;
+}
+
+/* Background Styling */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('sukuna.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px); /* Refined blur for subtle effect */
+    z-index: -1;
+    opacity: 0.3; /* Added opacity for better text visibility */
+}
+
+/* Navigation Styling */
+nav {
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 70px;
+    text-align: center;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3.2em;
+    color: #00aaff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #dddddd;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Container for Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Preview Gallery Styling */
+.preview-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.preview-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 15px;
+    text-align: center;
+}
+
+.preview-item:hover .preview-overlay {
+    opacity: 1;
+}
+
+.preview-overlay h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.preview-overlay p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: rgba(31, 31, 31, 0.9);
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .preview-item {
+        width: 90%;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .preview-gallery {
+        gap: 20px;
+    }
+
+    .preview-item {
+        width: 100%;
+        height: auto;
+    }
+}
