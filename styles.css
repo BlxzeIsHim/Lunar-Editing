@@ -22,6 +22,8 @@ html,
 body {
     height: 100%;
     overflow: hidden; /* Prevent scrolling */
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -37,6 +39,7 @@ body {
     overflow-y: hidden; /* Prevent vertical scrolling */
     min-height: 100vh; /* Ensure body covers full viewport height */
     width: 100vw; /* Ensure body covers full viewport width */
+    padding: 20px; /* Add padding to prevent content from touching edges */
 }
 
 /* Background Styling */
@@ -106,6 +109,9 @@ header {
     text-align: center;
     padding: 100px 20px;
     width: 100%;
+    max-width: 1000px; /* Limit header width */
+    margin-bottom: 30px; /* Add margin below header */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 header h1 {
@@ -130,12 +136,13 @@ header p {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center; /* Ensure buttons are centered */
+    justify-content: center; /* Center the buttons */
     align-items: center;
     margin-top: 30px;
-    padding: 0 20px; /* Add padding to avoid touching edges */
-    width: 100%; /* Ensure full-width layout for centering */
+    width: 100%;
+    max-width: 1000px; /* Limit width to maintain centering */
     box-sizing: border-box; /* Include padding in width calculations */
+    padding: 0 20px; /* Add padding for spacing */
 }
 
 .button-container a,
@@ -152,6 +159,7 @@ header p {
     display: flex;
     align-items: center;
     text-decoration: none;
+    justify-content: center; /* Center text inside buttons */
 }
 
 .button-container a .icon,
@@ -190,6 +198,7 @@ footer p {
 @media (max-width: 1024px) {
     nav ul {
         flex-direction: column;
+        align-items: center; /* Center the items vertically */
     }
 
     nav ul li {
@@ -210,19 +219,20 @@ footer p {
     .social-buttons {
         flex-direction: column;
         gap: 10px;
-        padding: 0 10px; /* Ensure padding for smaller screens */
+        padding: 0 20px; /* Ensure padding for smaller screens */
     }
 
     .button-container a,
     .social-buttons a {
-        width: 100%; /* Full width for smaller screens */
-        max-width: 300px; /* Optional: Limit button width */
+        width: calc(100% - 40px); /* Subtract padding to fit within the container */
+        max-width: 400px; /* Optional: Limit button width */
         font-size: 1em;
         padding: 10px 20px;
     }
 
     nav ul {
         flex-direction: column;
+        align-items: center; /* Center the items vertically */
     }
 
     nav ul li {
