@@ -130,8 +130,12 @@ header p {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Ensure buttons are centered */
+    align-items: center;
     margin-top: 30px;
+    padding: 0 20px; /* Add padding to avoid touching edges */
+    width: 100%; /* Ensure full-width layout for centering */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .button-container a,
@@ -206,11 +210,13 @@ footer p {
     .social-buttons {
         flex-direction: column;
         gap: 10px;
+        padding: 0 10px; /* Ensure padding for smaller screens */
     }
 
     .button-container a,
     .social-buttons a {
-        width: 80%;
+        width: 100%; /* Full width for smaller screens */
+        max-width: 300px; /* Optional: Limit button width */
         font-size: 1em;
         padding: 10px 20px;
     }
