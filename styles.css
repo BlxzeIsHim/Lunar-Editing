@@ -65,14 +65,18 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center the navigation */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the navigation items */
     padding: 0;
     margin: 0;
+    max-width: 1000px; /* Limit the width of the navigation for better alignment */
+    width: 100%;
 }
 
 nav ul li {
@@ -181,12 +185,17 @@ header p {
     transform: translateY(0);
 }
 
+/* Footer Styling */
 footer {
     background-color: var(--nav-background);
     text-align: center;
-    width: 100%;
-    margin-top: auto; /* Pushes footer to the bottom if page content is short */
+    width: 100vw; /* Ensure full width */
+    margin: 0; /* Remove margin to make it touch edges */
     padding: 20px 0;
+    box-sizing: border-box; /* Include padding in width calculations */
+    position: absolute; /* Fix footer to the bottom */
+    bottom: 0;
+    left: 0;
 }
 
 footer p {
@@ -198,11 +207,11 @@ footer p {
 @media (max-width: 1024px) {
     nav ul {
         flex-direction: column;
-        align-items: center; /* Center the items vertically */
+        align-items: center; /* Center items vertically when stacked */
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 10px 0; /* Adjust spacing between items */
     }
 }
 
@@ -232,10 +241,15 @@ footer p {
 
     nav ul {
         flex-direction: column;
-        align-items: center; /* Center the items vertically */
+        align-items: center; /* Center items vertically */
+        padding: 0 10px; /* Add padding to prevent touching edges */
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 10px 0; /* Ensure there's space between items */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Adjust font size for smaller screens */
     }
 }
