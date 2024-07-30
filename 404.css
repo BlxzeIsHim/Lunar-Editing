@@ -32,7 +32,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('sukuna.jpg') no-repeat center center;
+    background: url('gojoo.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(6px); /* Adjust blur to allow stars to be visible */
     opacity: 0.3; /* Lower opacity for sukuna background */
