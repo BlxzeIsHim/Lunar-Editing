@@ -6,6 +6,7 @@
     --nav-background: rgba(31, 31, 31, 0.9);
     --shadow-color: rgba(0, 0, 0, 0.3);
     --font-family: 'Poppins', sans-serif;
+    --content-max-width: 1200px; /* Reduced max width for more controlled spacing */
 }
 
 /* Universal Box-Sizing */
@@ -21,7 +22,6 @@
 html,
 body {
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
     margin: 0;
     padding: 0;
 }
@@ -34,12 +34,9 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--text-color);
-    position: relative;
     overflow-x: hidden;
-    overflow-y: hidden; /* Prevent vertical scrolling */
     min-height: 100vh; /* Ensure body covers full viewport height */
-    width: 100vw; /* Ensure body covers full viewport width */
-    padding: 20px; /* Add padding to prevent content from touching edges */
+    padding: 20px; /* Reduced padding for more compact layout */
 }
 
 /* Background Styling */
@@ -51,8 +48,8 @@ body {
     height: 100vh;
     background: url('satoru-gojo.jpg') no-repeat center center;
     background-size: cover; /* Ensure background covers the viewport */
-    filter: blur(8px);
-    opacity: 0.3;
+    filter: blur(8px); /* Adjusted blur for better contrast */
+    opacity: 0.3; /* Adjusted opacity */
     z-index: -1;
 }
 
@@ -60,8 +57,8 @@ body {
 nav {
     width: 100%;
     background-color: var(--nav-background);
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 0; /* Reduced padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -75,18 +72,18 @@ nav ul {
     justify-content: center; /* Center the navigation items */
     padding: 0;
     margin: 0;
-    max-width: 1000px; /* Limit the width of the navigation for better alignment */
+    max-width: var(--content-max-width); /* Limit the width of the navigation */
     width: 100%;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px; /* Reduced space between nav items */
 }
 
 nav ul li a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Reduced font size */
     font-weight: 300;
     transition: color 0.3s, border-bottom 0.3s;
     position: relative;
@@ -100,36 +97,36 @@ nav ul li a:hover::after {
     content: '';
     display: block;
     width: 100%;
-    height: 2px;
+    height: 3px; /* Reduced underline height */
     background-color: var(--primary-color);
     position: absolute;
-    bottom: -5px;
+    bottom: -8px; /* Adjusted distance from text */
     left: 0;
 }
 
 /* Header Styling */
 header {
-    margin-top: 70px;
+    margin-top: 50px;
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px; /* Reduced padding */
     width: 100%;
-    max-width: 1000px; /* Limit header width */
-    margin-bottom: 30px; /* Add margin below header */
+    max-width: var(--content-max-width); /* Increase max-width for content */
+    margin-bottom: 40px; /* Reduced margin below header */
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 3.5em; /* Reduced font size */
     color: var(--primary-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 20px;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.5em; /* Reduced font size */
     color: #cccccc;
-    max-width: 600px;
+    max-width: 900px; /* Reduced max-width for text */
     margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -138,15 +135,15 @@ header p {
 .button-container,
 .social-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap between buttons */
     flex-wrap: wrap;
     justify-content: center; /* Center the buttons */
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px; /* Reduced margin for better spacing */
     width: 100%;
-    max-width: 1000px; /* Limit width to maintain centering */
+    max-width: var(--content-max-width); /* Limit width to content max-width */
     box-sizing: border-box; /* Include padding in width calculations */
-    padding: 0 20px; /* Add padding for spacing */
+    padding: 0 20px; /* Adjusted padding */
 }
 
 .button-container a,
@@ -154,8 +151,8 @@ header p {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: none;
     border-radius: 50px;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    padding: 10px 25px; /* Reduced padding */
+    font-size: 1.2em; /* Reduced font size */
     color: var(--text-color);
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -168,16 +165,16 @@ header p {
 
 .button-container a .icon,
 .social-buttons a .icon {
-    width: 24px;
+    width: 24px; /* Adjusted icon size */
     height: auto;
-    margin-right: 10px;
+    margin-right: 10px; /* Adjusted space between icon and text */
 }
 
 .button-container a:hover,
 .social-buttons a:hover {
     background: linear-gradient(45deg, var(--secondary-color), #005fa3);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .button-container a:active,
@@ -191,7 +188,7 @@ footer {
     text-align: center;
     width: 100vw; /* Ensure full width */
     margin: 0; /* Remove margin to make it touch edges */
-    padding: 20px 0;
+    padding: 20px 0; /* Reduced padding */
     box-sizing: border-box; /* Include padding in width calculations */
     position: absolute; /* Fix footer to the bottom */
     bottom: 0;
@@ -228,12 +225,12 @@ footer p {
     .social-buttons {
         flex-direction: column;
         gap: 10px;
-        padding: 0 20px; /* Ensure padding for smaller screens */
+        padding: 0 10px; /* Ensure padding for smaller screens */
     }
 
     .button-container a,
     .social-buttons a {
-        width: calc(100% - 40px); /* Subtract padding to fit within the container */
+        width: calc(100% - 20px); /* Subtract padding to fit within the container */
         max-width: 400px; /* Optional: Limit button width */
         font-size: 1em;
         padding: 10px 20px;
