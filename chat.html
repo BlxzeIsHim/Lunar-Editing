@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Lunar Editing</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="background" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nopreviews.html">Previews</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="confess.html">Confess</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <h1>Chat</h1>
+            <p>Send a message anonymously.</p>
+        </header>
+
+        <!-- Username Input -->
+        <section class="username-section" id="username-section">
+            <label for="username">Enter Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <button id="save-username">Save Username</button>
+        </section>
+
+        <!-- Chat Form -->
+        <section class="chat-container">
+            <form id="chat-form">
+                <textarea id="message" placeholder="Type your message here..." required></textarea>
+
+                <!-- Embed Fields Toggle -->
+                <div class="embed-toggle">
+                    <input type="checkbox" id="show-embed-fields">
+                    <label for="show-embed-fields">Add Embed Fields</label>
+                </div>
+
+                <!-- Embed Fields -->
+                <div class="embed-fields" id="embed-fields">
+                    <input type="text" id="embed-title" placeholder="Embed Title (optional)">
+                    <input type="text" id="embed-description" placeholder="Embed Description (optional)">
+                    <input type="text" id="embed-image" placeholder="Embed Image URL (optional)">
+                    <input type="color" id="embed-color" title="Pick Embed Color" value="#000000">
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+            <div id="status-message"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lunar Editing. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Direct webhook URL
+        const webhookUrl = 'https://discord.com/api/webhooks/1274841601331433542/g7_qf9PA5-fA0mxTRQvPKyuT4d5xXhU9B0DLNGqT14kResU86Z8tjKRI6ESIZX01ApI5';
+
+        const allowedUsernames = ['user1', 'user2']; // Replace with your actual usernames
+        const rateLimit = 9000; // 5 seconds rate limit
+        let lastMessageTime = 0;
+        let db;
+
+        // IndexedDB Setup
+        const request = indexedDB.open("userDatabase", 1);
+
+        request.onupgradeneeded = function(event) {
+            db = event.target.result;
+            const objectStore = db.createObjectStore("users", { keyPath: "id" });
+            objectStore.createIndex("username", "username", { unique: true });
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            checkSavedUsername();
+        };
+
+        function saveUsername(username) {
+            if (!allowedUsernames.includes(username)) {
+                document.getElementById('status-message').textContent = 'Invalid username.';
+                return;
+            }
+            const transaction = db.transaction(["users"], "readwrite");
+            const objectStore = transaction.objectStore("users");
+            objectStore.put({ id: 1, username: username });
+
+            transaction.oncomplete = function() {
+                document.querySelector('.username-section').style.display = 'none';
+                document.querySelector('.embed-toggle').style.display = 'block'; // Ensure toggle is visible
+                document.getElementById('embed-fields').style.display = 'none';
+                document.getElementById('status-message').textContent = 'Username saved!';
+            };
+
+            transaction.onerror = function() {
+                document.getElementById('status-message').textContent = 'Error saving username.';
+            };
+        }
+
+        function checkSavedUsername() {
+            const transaction = db.transaction(["users"]);
+            const objectStore = transaction.objectStore("users");
+            const request = objectStore.get(1);
+
+            request.onsuccess = function(event) {
+                if (event.target.result) {
+                    const savedUsername = event.target.result.username;
+                    if (allowedUsernames.includes(savedUsername)) {
+                        document.querySelector('.username-section').style.display = 'none';
+                        document.querySelector('.embed-toggle').style.display = 'block';
+                        document.getElementById('embed-fields').style.display = 'none';
+                    }
+                }
+            };
+        }
+
+        document.getElementById('save-username').addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            saveUsername(username);
+        });
+
+        document.getElementById('show-embed-fields').addEventListener('change', (event) => {
+            const embedFields = document.getElementById('embed-fields');
+            if (event.target.checked) {
+                embedFields.style.display = 'block';
+            } else {
+                embedFields.style.display = 'none';
+                clearEmbedFields(); // Clear embed fields if not in use
+            }
+        });
+
+        function clearEmbedFields() {
+            document.getElementById('embed-title').value = '';
+            document.getElementById('embed-description').value = '';
+            document.getElementById('embed-image').value = '';
+            document.getElementById('embed-color').value = '#000000';
+        }
+
+        document.getElementById('chat-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const message = document.getElementById('message').value;
+            const title = document.getElementById('embed-title').value;
+            const description = document.getElementById('embed-description').value;
+            const imageUrl = document.getElementById('embed-image').value;
+            const color = document.getElementById('embed-color').value;
+
+            const urlPattern = /^(https?:\/\/[^\s]+\.(?:jpg|jpeg|png|gif))$/i; // Validate image URL
+
+            // Ensure links are allowed only in the image URL field
+            if (urlPattern.test(message) || urlPattern.test(title) || urlPattern.test(description)) {
+                document.getElementById('status-message').textContent = 'Links are not allowed in the message, title, or description.';
+                return;
+            }
+
+            // Check if embed fields are visible and if username is valid
+            const embedFieldsVisible = document.getElementById('embed-fields').style.display === 'block';
+            if (embedFieldsVisible && !imageUrl && !title && !description) {
+                document.getElementById('status-message').textContent = 'Please provide at least one embed field.';
+                return;
+            }
+
+            const currentTime = Date.now();
+            if (currentTime - lastMessageTime < rateLimit) {
+                document.getElementById('status-message').textContent = 'Please wait before sending another message.';
+                return;
+            }
+            lastMessageTime = currentTime;
+
+            const payload = {
+                content: embedFieldsVisible ? undefined : message,
+                embeds: title || description || imageUrl ? [{
+                    title: title || undefined,
+                    description: description || undefined,
+                    image: imageUrl && urlPattern.test(imageUrl) ? { url: imageUrl } : undefined,
+                    color: parseInt(color.replace('#', ''), 16) || undefined
+                }] : undefined
+            };
+
+            axios.post(webhookUrl, payload)
+                .then(response => {
+                    document.getElementById('status-message').textContent = 'Message sent successfully!';
+                    document.getElementById('message').value = '';
+                    clearEmbedFields();
+                })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+                    document.getElementById('status-message').textContent = 'Failed to send message. Please try again.';
+                });
+        });
+    </script>
+</body>
+</html>

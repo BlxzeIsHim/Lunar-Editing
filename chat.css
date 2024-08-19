@@ -1,0 +1,232 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #36393f; /* Dark background similar to Discord */
+    color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navigation Styles */
+nav {
+    background: #2f3136; /* Dark background for nav bar */
+    padding: 10px;
+    text-align: center; /* Center the content in the nav */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the nav is above other content */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Make list items inline */
+    margin-right: 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #b9bbbe; /* Light gray color for links */
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #7289da; /* Change color on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding-top: 60px; /* Space for fixed nav bar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 5px 0 20px;
+}
+
+/* Username Section */
+.username-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.username-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.username-section input[type="text"] {
+    width: calc(100% - 20px);
+    max-width: 300px; /* Maximum width of input */
+    padding: 15px;
+    border: 1px solid #7289da;
+    border-radius: 8px;
+    background: #40444b;
+    color: #ffffff;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.username-section button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    background: #7289da;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.username-section button:hover {
+    background: #5b6f8a;
+    transform: translateY(-2px);
+}
+
+.username-section button:active {
+    transform: translateY(0);
+}
+
+/* Chat Container */
+.chat-container {
+    max-width: 600px;
+    width: 100%;
+    background: #2f3136;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    text-align: center; /* Center text and buttons inside chat-container */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main Textarea */
+textarea {
+    width: calc(100% - 20px);
+    max-width: 100%; /* Ensure textarea does not exceed container width */
+    padding: 15px;
+    border: 1px solid #7289da;
+    border-radius: 8px;
+    background: #40444b;
+    color: #ffffff;
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-bottom: 20px;
+    resize: none; /* Disable resizing */
+    min-height: 120px; /* Increase minimum height */
+}
+
+/* Buttons */
+button {
+    background: #7289da;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+button:hover {
+    background: #5b6f8a;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Embed Fields Styles */
+.embed-fields {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px; /* Increased space between fields */
+    width: 100%; /* Full width of the container */
+    max-width: 100%; /* Ensure it does not exceed container width */
+}
+
+.embed-fields input[type="text"],
+.embed-fields input[type="color"] {
+    background: #40444b;
+    border: 1px solid #7289da;
+    border-radius: 8px;
+    padding: 15px;
+    color: #ffffff;
+    box-sizing: border-box;
+    width: calc(100% - 20px); /* Full width with padding */
+    max-width: 600px; /* Maximum width of fields */
+}
+
+.embed-fields input[type="text"] {
+    margin-bottom: 15px;
+    min-height: 50px; /* Increase height for better readability */
+}
+
+/* Embed Toggle Styles */
+.embed-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.embed-toggle input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.embed-toggle label {
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+/* Footer Styles */
+footer {
+    background: #2f3136; /* Dark background for footer */
+    padding: 10px;
+    text-align: center; /* Center text inside footer */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #b9bbbe; /* Light gray color for footer text */
+}
