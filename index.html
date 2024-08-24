@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunar Editing - Your One-Stop Solution for Video Editing Needs</title>
-    <link rel="stylesheet" href="styles.css">
+    <link id="main-stylesheet" rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Lunar Editing is your one-stop solution for all video editing needs, offering XML Presets, QR Codes, and tutorials.">
     <meta name="keywords" content="video editing, XML presets, QR codes, tutorials, Lunar Editing">
     <meta property="og:title" content="Lunar Editing">
     <meta property="og:description" content="Your one-stop solution for all video editing needs.">
-    <meta property="og:image" content="link_to_your_image.jpg"> <!-- Add your Open Graph image URL -->
+    <meta property="og:image" content="link_to_your_image.jpg">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:type" content="website">
 </head>
 <body>
     <div class="background" aria-hidden="true"></div>
     
+    <!-- Device Popup -->
+    <div id="device-popup" class="popup">
+        <div class="popup-content">
+            <p>On what device are you?</p>
+            <button id="mobile-btn">Mobile</button>
+            <button id="computer-btn">Computer</button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -44,8 +51,8 @@
             <a href="presets.html" class="xml-presets" aria-label="XML Presets">XML Presets</a>
             <a href="qrcodes.html" class="qr-codes" aria-label="QR Codes">QR Codes</a>
             <a href="tutorials.html" class="tutorials" aria-label="Tutorials">Tutorials</a>
-            <a href="converter.html" class="converter" aria-label="Converter">Converter</a> <!-- Added Converter button -->
-            <a href="chat.html" class="chat" aria-label="Chat">Chat</a> <!-- Added Chat button -->
+            <a href="converter.html" class="converter" aria-label="Converter">Converter</a>
+            <a href="chat.html" class="chat" aria-label="Chat">Chat</a>
         </section>
 
         <!-- Social Media Buttons -->
@@ -63,5 +70,7 @@
     <footer>
         <p>&copy; 2024 Lunar Editing. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
