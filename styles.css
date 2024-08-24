@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #00aaff;
-    --secondary-color: #0077cc;
-    --background-color: #2e2e2e;
-    --text-color: #ffffff;
-    --nav-background: rgba(31, 31, 31, 0.9);
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-color: #1d2d44; /* Dark navy blue */
+    --secondary-color: #a9a9a9; /* Light gray for contrast */
+    --background-color: #000000; /* Deep black */
+    --text-color: #e5e5e5; /* Soft white for contrast */
+    --nav-background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Stronger shadow */
     --font-family: 'Poppins', sans-serif;
-    --content-max-width: 1200px; /* Reduced max width for more controlled spacing */
+    --content-max-width: 1200px; /* Controlled spacing */
 }
 
 /* Universal Box-Sizing */
@@ -29,27 +29,33 @@ body {
 body {
     background-color: var(--background-color);
     font-family: var(--font-family);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     color: var(--text-color);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh; /* Ensure body covers full viewport height */
-    padding: 20px; /* Reduced padding for more compact layout */
+}
+
+/* Ensure content grows and pushes footer down */
+main {
+    flex: 1;
+    width: 100%; /* Full width */
+    max-width: var(--content-max-width); /* Controlled max-width */
+    margin: 0 auto; /* Centered content */
+    padding-bottom: 70px; /* Adjusted space for footer */
 }
 
 /* Background Styling */
 .background {
-    position: fixed; /* Keep background fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('satoru-gojo.jpg') no-repeat center center;
-    background-size: cover; /* Ensure background covers the viewport */
-    filter: blur(8px); /* Adjusted blur for better contrast */
-    opacity: 0.3; /* Adjusted opacity */
+    background: url('Lunar.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px);
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -57,93 +63,99 @@ body {
 nav {
     width: 100%;
     background-color: var(--nav-background);
-    padding: 15px 0; /* Reduced padding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    box-shadow: 0 6px 12px var(--shadow-color);
     position: fixed;
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Center the navigation */
+    justify-content: center;
+    left: 0; /* Ensure navigation starts from the left edge */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center the navigation items */
+    justify-content: center;
     padding: 0;
     margin: 0;
-    max-width: var(--content-max-width); /* Limit the width of the navigation */
+    max-width: var(--content-max-width);
     width: 100%;
 }
 
 nav ul li {
-    margin: 0 20px; /* Reduced space between nav items */
+    margin: 0 25px;
 }
 
 nav ul li a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.5em; /* Reduced font size */
-    font-weight: 300;
+    font-size: 1.4em;
+    font-weight: 400;
     transition: color 0.3s, border-bottom 0.3s;
     position: relative;
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 nav ul li a:hover::after {
     content: '';
     display: block;
     width: 100%;
-    height: 3px; /* Reduced underline height */
-    background-color: var(--primary-color);
+    height: 4px;
+    background-color: var(--secondary-color);
     position: absolute;
-    bottom: -8px; /* Adjusted distance from text */
+    bottom: -10px;
     left: 0;
 }
 
 /* Header Styling */
 header {
-    margin-top: 50px;
+    margin-top: 60px;
     text-align: center;
-    padding: 80px 20px; /* Reduced padding */
+    padding: 100px 20px;
     width: 100%;
-    max-width: var(--content-max-width); /* Increase max-width for content */
-    margin-bottom: 40px; /* Reduced margin below header */
-    box-sizing: border-box; /* Include padding in width calculations */
+    max-width: var(--content-max-width);
+    margin-bottom: 30px; /* Adjusted margin below header */
+    box-sizing: border-box;
 }
 
 header h1 {
-    font-size: 3.5em; /* Reduced font size */
-    color: var(--primary-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    font-size: 4em;
+    color: var(--secondary-color);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    margin-bottom: 20px; /* Adjusted margin for h1 */
 }
 
 header p {
-    font-size: 1.5em; /* Reduced font size */
-    color: #cccccc;
-    max-width: 900px; /* Reduced max-width for text */
+    font-size: 1.8em;
+    color: #dcdcdc;
+    max-width: 800px;
     margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Button Container and Social Buttons */
 .button-container,
 .social-buttons {
     display: flex;
-    gap: 15px; /* Reduced gap between buttons */
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: center; /* Center the buttons */
+    justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Reduced margin for better spacing */
+    margin-top: 20px; /* Reduced margin between sections */
     width: 100%;
-    max-width: var(--content-max-width); /* Limit width to content max-width */
-    box-sizing: border-box; /* Include padding in width calculations */
-    padding: 0 20px; /* Adjusted padding */
+    max-width: var(--content-max-width); /* Centered within max-width */
+    margin: 0 auto; /* Centered content */
+    padding: 0 20px;
+}
+
+/* Ensure buttons have space and do not overlap */
+.button-container {
+    margin-bottom: 30px; /* Adjusted margin to reduce space */
 }
 
 .button-container a,
@@ -151,30 +163,30 @@ header p {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: none;
     border-radius: 50px;
-    padding: 10px 25px; /* Reduced padding */
-    font-size: 1.2em; /* Reduced font size */
+    padding: 15px 30px;
+    font-size: 1.4em;
     color: var(--text-color);
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px var(--shadow-color);
+    box-shadow: 0 6px 12px var(--shadow-color);
     display: flex;
     align-items: center;
     text-decoration: none;
-    justify-content: center; /* Center text inside buttons */
+    justify-content: center;
 }
 
 .button-container a .icon,
 .social-buttons a .icon {
-    width: 24px; /* Adjusted icon size */
+    width: 30px;
     height: auto;
-    margin-right: 10px; /* Adjusted space between icon and text */
+    margin-right: 15px;
 }
 
 .button-container a:hover,
 .social-buttons a:hover {
-    background: linear-gradient(45deg, var(--secondary-color), #005fa3);
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, var(--secondary-color), #707070);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .button-container a:active,
@@ -186,67 +198,68 @@ header p {
 footer {
     background-color: var(--nav-background);
     text-align: center;
-    width: 100vw; /* Ensure full width */
-    margin: 0; /* Remove margin to make it touch edges */
+    width: 100%;
     padding: 20px 0; /* Reduced padding */
-    box-sizing: border-box; /* Include padding in width calculations */
-    position: absolute; /* Fix footer to the bottom */
+    box-sizing: border-box;
+    position: relative; /* Changed to relative */
+    left: 0; /* Ensure footer starts from the left edge */
     bottom: 0;
-    left: 0;
+    z-index: 999;
 }
 
+/* Ensure footer does not overlap content */
 footer p {
     margin: 0;
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     nav ul {
         flex-direction: column;
-        align-items: center; /* Center items vertically when stacked */
+        align-items: center;
     }
 
     nav ul li {
-        margin: 10px 0; /* Adjust spacing between items */
+        margin: 15px 0;
     }
 }
 
 @media (max-width: 600px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     header p {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .button-container,
     .social-buttons {
         flex-direction: column;
-        gap: 10px;
-        padding: 0 10px; /* Ensure padding for smaller screens */
+        gap: 15px;
+        padding: 0 15px;
     }
 
     .button-container a,
     .social-buttons a {
-        width: calc(100% - 20px); /* Subtract padding to fit within the container */
-        max-width: 400px; /* Optional: Limit button width */
-        font-size: 1em;
-        padding: 10px 20px;
+        width: calc(100% - 30px);
+        max-width: 400px;
+        font-size: 1.2em;
+        padding: 12px 25px;
     }
 
     nav ul {
         flex-direction: column;
-        align-items: center; /* Center items vertically */
-        padding: 0 10px; /* Add padding to prevent touching edges */
+        align-items: center;
+        padding: 0 15px;
     }
 
     nav ul li {
-        margin: 10px 0; /* Ensure there's space between items */
+        margin: 15px 0;
     }
 
     nav ul li a {
-        font-size: 1em; /* Adjust font size for smaller screens */
+        font-size: 1.2em;
     }
 }
