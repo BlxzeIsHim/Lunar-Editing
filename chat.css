@@ -3,21 +3,22 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #36393f; /* Dark background similar to Discord */
-    color: #ffffff;
+    background-color: #121212; /* Dark, almost black background */
+    color: #e0e0e0; /* Very light gray for high contrast */
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Navigation Styles */
 nav {
-    background: #2f3136; /* Dark background for nav bar */
-    padding: 10px;
+    background: #1e1e1e; /* Slightly lighter dark background for nav bar */
+    padding: 15px; /* Slightly more padding for a bolder look */
     text-align: center; /* Center the content in the nav */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure the nav is above other content */
+    border-bottom: 1px solid #333; /* Subtle border for a sharp edge */
 }
 
 nav ul {
@@ -28,25 +29,27 @@ nav ul {
 
 nav ul li {
     display: inline; /* Make list items inline */
-    margin-right: 15px; /* Space between items */
+    margin-right: 20px; /* More space between items */
 }
 
 nav ul li a {
-    color: #b9bbbe; /* Light gray color for links */
+    color: #b0b0b0; /* Slightly darker gray for links */
     text-decoration: none;
-    font-size: 1em;
-    padding: 5px 10px;
+    font-size: 1.2em; /* Slightly larger font for prominence */
+    padding: 10px 15px;
     display: inline-block;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
 }
 
 nav ul li a:hover {
-    color: #7289da; /* Change color on hover */
+    color: #c0c0c0; /* Light gray for hover */
+    border-bottom: 2px solid #4a4a4a; /* Underline effect on hover */
 }
 
 /* Main Content Styles */
 main {
-    padding-top: 60px; /* Space for fixed nav bar */
+    padding-top: 80px; /* Space for fixed nav bar */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,57 +59,62 @@ main {
 /* Header Styles */
 header {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 3em; /* Larger font size for impact */
     margin: 0;
+    color: #c0c0c0; /* Light gray color for h1 */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Shadow for depth */
 }
 
 header p {
-    font-size: 1.2em;
-    margin: 5px 0 20px;
+    font-size: 1.4em; /* Slightly larger text for emphasis */
+    margin: 10px 0 30px;
+    color: #e0e0e0; /* Light color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
 }
 
 /* Username Section */
 .username-section {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .username-section label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #c0c0c0;
 }
 
 .username-section input[type="text"] {
-    width: calc(100% - 20px);
-    max-width: 300px; /* Maximum width of input */
+    width: calc(100% - 40px);
+    max-width: 400px; /* Maximum width of input */
     padding: 15px;
-    border: 1px solid #7289da;
-    border-radius: 8px;
-    background: #40444b;
-    color: #ffffff;
+    border: 1px solid #4a4a4a; /* Darker border color */
+    border-radius: 10px;
+    background: #2c2c2c; /* Slightly lighter dark background */
+    color: #e0e0e0;
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .username-section button {
-    margin-top: 15px;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    border-radius: 8px;
-    background: #7289da;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: #4a4a4a; /* Darker background for buttons */
     color: #ffffff;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .username-section button:hover {
-    background: #5b6f8a;
-    transform: translateY(-2px);
+    background: #616161;
+    transform: translateY(-3px);
 }
 
 .username-section button:active {
@@ -117,11 +125,11 @@ header p {
 .chat-container {
     max-width: 600px;
     width: 100%;
-    background: #2f3136;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin: 20px auto;
+    background: #1e1e1e; /* Dark background */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
     text-align: center; /* Center text and buttons inside chat-container */
 }
 
@@ -134,36 +142,36 @@ form {
 
 /* Main Textarea */
 textarea {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     max-width: 100%; /* Ensure textarea does not exceed container width */
     padding: 15px;
-    border: 1px solid #7289da;
-    border-radius: 8px;
-    background: #40444b;
-    color: #ffffff;
+    border: 1px solid #4a4a4a;
+    border-radius: 10px;
+    background: #2c2c2c;
+    color: #e0e0e0;
     box-sizing: border-box; /* Include padding in width calculation */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     resize: none; /* Disable resizing */
-    min-height: 120px; /* Increase minimum height */
+    min-height: 150px; /* Increased minimum height */
 }
 
 /* Buttons */
 button {
-    background: #7289da;
+    background: #4a4a4a;
     border: none;
-    border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 1.1em;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
     color: #ffffff;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    margin: 10px;
 }
 
 button:hover {
-    background: #5b6f8a;
-    transform: translateY(-2px);
+    background: #616161;
+    transform: translateY(-3px);
 }
 
 button:active {
@@ -175,27 +183,27 @@ button:active {
     display: none;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    gap: 15px; /* Increased space between fields */
-    width: 100%; /* Full width of the container */
-    max-width: 100%; /* Ensure it does not exceed container width */
+    margin-top: 30px;
+    gap: 20px; /* More space between fields */
+    width: 100%;
+    max-width: 100%;
 }
 
 .embed-fields input[type="text"],
 .embed-fields input[type="color"] {
-    background: #40444b;
-    border: 1px solid #7289da;
-    border-radius: 8px;
+    background: #2c2c2c;
+    border: 1px solid #4a4a4a;
+    border-radius: 10px;
     padding: 15px;
-    color: #ffffff;
+    color: #e0e0e0;
     box-sizing: border-box;
-    width: calc(100% - 20px); /* Full width with padding */
-    max-width: 600px; /* Maximum width of fields */
+    width: calc(100% - 40px);
+    max-width: 600px;
 }
 
 .embed-fields input[type="text"] {
-    margin-bottom: 15px;
-    min-height: 50px; /* Increase height for better readability */
+    margin-bottom: 20px;
+    min-height: 60px; /* Increased height for readability */
 }
 
 /* Embed Toggle Styles */
@@ -203,7 +211,7 @@ button:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .embed-toggle input[type="checkbox"] {
@@ -211,22 +219,23 @@ button:active {
 }
 
 .embed-toggle label {
-    font-size: 1.1em;
-    color: #ffffff;
+    font-size: 1.2em;
+    color: #e0e0e0;
 }
 
 /* Footer Styles */
 footer {
-    background: #2f3136; /* Dark background for footer */
-    padding: 10px;
-    text-align: center; /* Center text inside footer */
+    background: #1e1e1e; /* Dark background for footer */
+    padding: 15px;
+    text-align: center;
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
+    border-top: 1px solid #333; /* Subtle border for definition */
 }
 
 footer p {
     margin: 0;
-    color: #b9bbbe; /* Light gray color for footer text */
+    color: #b0b0b0; /* Light gray color for footer text */
 }
