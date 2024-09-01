@@ -31,3 +31,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const goodbyePopup = document.getElementById('goodbye');
+    const closeGoodbyeBtn = document.getElementById('close-goodbye-btn');
+
+    // Function to show the goodbye popup
+    function showGoodbyePopup() {
+        goodbyePopup.style.display = 'flex';
+    }
+
+    // Function to close the goodbye popup
+    function closeGoodbyePopup() {
+        goodbyePopup.style.display = 'none';
+    }
+
+    // Show the goodbye popup for demo purposes
+    // You can call this function when needed (e.g., on page load or a specific event)
+    showGoodbyePopup();
+
+    // Close the popup when the close button is clicked
+    closeGoodbyeBtn.addEventListener('click', closeGoodbyePopup);
+});
