@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolBox - File Size Compressor</title>
+    <link rel="stylesheet" href="toolbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compress.js/1.0.6/compress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@latest"></script>
+    <script src="https://cdn.rawgit.com/jnordberg/gif.js/master/dist/gif.js"></script>
+</head>
+<body>
+    <div class="background" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="metadata.html">View MetaData</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="converter">
+            <h1>File Size Compressor</h1>
+            <input type="file" id="file-input" multiple accept="image/*,video/*,image/gif">
+            <label for="compression-level">Compression Level (Higher = More Compression):</label>
+            <input type="range" id="compression-level" min="0" max="100" value="50">
+            <button id="compress-button">Compress</button>
+        </section>
+
+        <!-- Result Container -->
+        <section id="result-container" class="result-container">
+            <h2>Compression Results</h2>
+            <!-- Results will be displayed here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Lunar Editing. All rights reserved.</p>
+    </footer>
+
+    <script src="toolbox.js"></script>
+</body>
+</html>
